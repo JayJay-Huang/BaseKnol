@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://query" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://query" xmlns:intf="http://query" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://query" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="findAllRecord">
+    <complexType>
+     <sequence>
+      <element name="Channel" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findAllRecordResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findAllRecordReturn" type="tns1:Record"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findRecordByRecordName">
+    <complexType>
+     <sequence>
+      <element name="recorded_name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findRecordByRecordNameResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findRecordByRecordNameReturn" type="tns1:Record"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findLive">
+    <complexType/>
+   </element>
+   <element name="findLiveResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findLiveReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findLiveForIOS">
+    <complexType/>
+   </element>
+   <element name="findLiveForIOSResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findLiveForIOSReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Record">
+    <sequence>
+     <element name="DJ" nillable="true" type="xsd:string"/>
+     <element name="liveAM" nillable="true" type="xsd:string"/>
+     <element name="liveFM" nillable="true" type="xsd:string"/>
+     <element name="playLink" nillable="true" type="xsd:string"/>
+     <element name="program_Name" nillable="true" type="xsd:string"/>
+     <element name="recorded_Folder" nillable="true" type="xsd:string"/>
+     <element name="recorded_Name" nillable="true" type="xsd:string"/>
+     <element name="recorded_Ts" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="findAllRecordRequest">
+
+      <wsdl:part element="impl:findAllRecord" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findRecordByRecordNameRequest">
+
+      <wsdl:part element="impl:findRecordByRecordName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findLiveForIOSRequest">
+
+      <wsdl:part element="impl:findLiveForIOS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findAllRecordResponse">
+
+      <wsdl:part element="impl:findAllRecordResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findLiveForIOSResponse">
+
+      <wsdl:part element="impl:findLiveForIOSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findRecordByRecordNameResponse">
+
+      <wsdl:part element="impl:findRecordByRecordNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findLiveResponse">
+
+      <wsdl:part element="impl:findLiveResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findLiveRequest">
+
+      <wsdl:part element="impl:findLive" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="QueryData">
+
+      <wsdl:operation name="findAllRecord">
+
+         <wsdl:input message="impl:findAllRecordRequest" name="findAllRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findAllRecordResponse" name="findAllRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findRecordByRecordName">
+
+         <wsdl:input message="impl:findRecordByRecordNameRequest" name="findRecordByRecordNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findRecordByRecordNameResponse" name="findRecordByRecordNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findLive">
+
+         <wsdl:input message="impl:findLiveRequest" name="findLiveRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findLiveResponse" name="findLiveResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findLiveForIOS">
+
+         <wsdl:input message="impl:findLiveForIOSRequest" name="findLiveForIOSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findLiveForIOSResponse" name="findLiveForIOSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="QueryDataSoapBinding" type="impl:QueryData">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="findAllRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findAllRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findAllRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findRecordByRecordName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findRecordByRecordNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findRecordByRecordNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findLive">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findLiveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findLiveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findLiveForIOS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findLiveForIOSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findLiveForIOSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="QueryDataService">
+
+      <wsdl:port binding="impl:QueryDataSoapBinding" name="QueryData">
+
+         <wsdlsoap:address location="http://tpradio.ginnet.cloud/TBS_WebService/QueryData"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

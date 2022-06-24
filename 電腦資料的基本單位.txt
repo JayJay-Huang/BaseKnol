@@ -1,0 +1,10 @@
+# 資料與訊號
+data: 被傳送的東西。
+signal: 用來傳送的媒介。
+
+## 資料分為: 類比 & 數位
+analog data: 形式連續
+digetal data: 形式不連續
+
+# 電腦基本單位: bit
+bit: binary digit

@@ -1,0 +1,3 @@
+http://www.w3big.com/zh-TW/regexp/regexp-metachar.html
+http://ccckmit.wikidot.com/regularexpression
+
