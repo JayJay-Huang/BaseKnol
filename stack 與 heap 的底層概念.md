@@ -1,0 +1,1 @@
+https://nwpie.blogspot.com/2017/05/5-stack-heap.html
